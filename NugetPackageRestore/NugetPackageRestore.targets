@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<UsingTask AssemblyFile="NugetPackageRestore.dll" TaskName="NugetPackageRestoreTask" />
+  <Target Name="BeforeBuild" >
+    <!-- Available options (with example values) are:
+      SolutionDir                   = "$(SolutionDir)"                 <- Full path to your solution
+      ProjectDir                    = "$(ProjectDir)"                  <- Full path to your project
+      PackagesDir                   = "$(SolutionDir)packages"         <- Full path to packages folder
+      AddContentReferencesToProject = "true"                           <- Enables to add content references of installed packages to your .csproj file, false by default
+      ConfigFileFullPath            = "$(ProjectDir)mypackages.config" <- Full path to packages config file, set to $(ProjectDir)packages.config by default
+      ProjectFileFullPath           = "$(ProjectDir)myproject.csproj"  <- Full path to project file, set to $(ProjectDir)*.csproj by default
+    -->
+    <NugetPackageRestoreTask SolutionDir="$(SolutionDir)" ProjectDir="$(ProjectDir)" PackagesDir="$(SolutionDir)packages" />
+  </Target>
+</Project>
