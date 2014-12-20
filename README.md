@@ -29,12 +29,18 @@ None of this solutions worked for me, I needed to be able to take advantage of A
 ##Usage
 After installing NugetPackageRestore a reference to NugetPackageRestore.targets will be added to your project, you can add attributes to the NugetPackageRestoreTask to modify its behavior (view NugetPackageRestore.targets for details):
 
-SolutionDir                   <- Full path to your solution
-ProjectDir                    <- Full path to your project
-PackagesDir                   <- Full path to packages folder
-AddContentReferencesToProject <- Enables to add content references of installed packages to your .csproj file, false by default
-ConfigFileFullPath            <- Full path to packages config file, set to $(ProjectDir)packages.config by default
-ProjectFileFullPath           <- Full path to project file, set to $(ProjectDir)*.csproj by default
+SolutionDir - Full path to your solution
+
+ProjectDir - Full path to your project
+
+PackagesDir - Full path to packages folder
+
+AddContentReferencesToProject - Enables to add content references of installed packages to your .csproj file, false by 
+default
+
+ConfigFileFullPath - Full path to packages config file, set to $(ProjectDir)packages.config by default
+
+ProjectFileFullPath - Full path to project file, set to $(ProjectDir)*.csproj by default
 
 ##To DO
 I am currently working on a way to automatically ignore all installed files from source control, beginning by adding them to .gitignore
