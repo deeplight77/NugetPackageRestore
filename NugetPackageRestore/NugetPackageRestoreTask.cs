@@ -57,7 +57,7 @@ namespace NugetPackageRestore
         public override bool Execute()
         {
             //Uncomment the following line for debugging
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
             if (!IsValidInput())
             {
                 return false;
