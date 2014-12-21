@@ -1,5 +1,4 @@
 #NugetPackageRestore
-===================
 
 MSBuild task to restore Nuget packages files to project after a Nuget package restore using Nuget.Core and Nuget.Commandline
 
@@ -25,6 +24,13 @@ Other interesting solution to workaround this issue is available here:
 - https://github.com/uluhonolulu/BlogSamples/tree/master/NuGetSample
 
 None of this solutions worked for me, I needed to be able to take advantage of Automatic Nuget Package Restore, and yet have all the downloaded packages automatically installed to my solution folder. So I came up with this task.
+
+##Download
+To install NugetPackageRestore, run the following command in the Package Manager Console:
+    
+	PM> Install-Package MSBuild.NugetContentRestore
+	
+NuGet Package available at https://www.nuget.org/packages/NugetPackageRestore/
 
 ##Usage
 After installing NugetPackageRestore a reference to NugetPackageRestore.targets will be added to your project, you can add attributes to the NugetPackageRestoreTask to modify its behavior (view NugetPackageRestore.targets for details):
