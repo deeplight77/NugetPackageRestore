@@ -19,7 +19,7 @@
   <files>
     <file src="NugetPackageRestore\NugetPackageRestore.dll" target="build\net40" />
     <file src="NugetPackageRestore\NugetPackageRestore.targets" target="build\net40" />
-	<file src="tools\" target="tools" />
+	<file src="NugetPackageRestore\NuGet.exe" target="build\net40" />
     <file src="readme.txt" target="" />
   </files>
 </package>
