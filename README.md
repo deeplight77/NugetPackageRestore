@@ -18,7 +18,7 @@ Altough this solution restores all packages, it does not copy package files to y
 Jeff Handley explained the reason here:
 - http://jeffhandley.com/archive/2013/12/09/nuget-package-restore-misconceptions.aspx
 
-Other interesting solution to workaround this issue is available here:
+Other solutions to workaround this issue are available (this project is inspired by them):
 - https://github.com/baseclass/Contrib.Nuget
 - https://github.com/panchilo/MSBuild.NugetContentRestore
 - https://github.com/uluhonolulu/BlogSamples/tree/master/NuGetSample
