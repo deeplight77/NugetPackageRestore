@@ -73,6 +73,11 @@ namespace NugetPackageRestore
             var packages = GetPackages();
             foreach (PackageInfo package in packages)
             {
+                if (package.Name == "NugetPackageRestore")
+                {
+                    continue;
+                }
+
                 String packageFullPath = Path.Combine(PackagesDir, package.FolderName);
                 Log.LogMessage(MessageImportance.Low, "NugetPackageRestore :: {0} :: FullPath='{1}'", package.FolderName, packageFullPath);
                 

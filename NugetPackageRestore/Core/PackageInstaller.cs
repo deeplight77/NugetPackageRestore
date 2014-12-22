@@ -30,7 +30,13 @@ namespace NugetPackageRestore
             string fullPath = Path.Combine(_localRepositoryPath, folderName, _flagFileName);
 
             //Create flag file to prevent multiple installations of the same package
-            _projectManager.PackageReferenceAdded += (sender, args) => File.Create(fullPath);
+            _projectManager.PackageReferenceAdded += (sender, args) => 
+            {
+                if (!File.Exists(fullPath))
+                {
+                    File.Create(fullPath);
+                }
+            };
 
             _projectManager.AddPackageReference(packageId, new SemanticVersion(version), false, false);
             _projectSystem.Save();
