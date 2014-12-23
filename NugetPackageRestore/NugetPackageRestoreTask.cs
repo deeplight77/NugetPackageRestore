@@ -65,9 +65,9 @@ namespace NugetPackageRestore
 
             PackageInstaller installer = new PackageInstaller(PackagesDir, ProjectFileFullPath, new MsBuildConsole(Log), AddContentReferencesToProject);
 
-            Log.LogMessage(MessageImportance.Low, "NugetPackageRestore :: SolutionDir='{0}'", SolutionDir);
-            Log.LogMessage(MessageImportance.Low, "NugetPackageRestore :: ProjectDir='{0}'", ProjectDir);
-            Log.LogMessage(MessageImportance.Low, "NugetPackageRestore :: ConfigFileFullPath='{0}'", ConfigFileFullPath);
+            Log.LogMessage(MessageImportance.Normal, "NugetPackageRestore :: SolutionDir='{0}'", SolutionDir);
+            Log.LogMessage(MessageImportance.Normal, "NugetPackageRestore :: ProjectDir='{0}'", ProjectDir);
+            Log.LogMessage(MessageImportance.Normal, "NugetPackageRestore :: ConfigFileFullPath='{0}'", ConfigFileFullPath);
 
             // Get NuGet Package Configuration
             var packages = GetPackages();
@@ -79,11 +79,11 @@ namespace NugetPackageRestore
                 }
 
                 String packageFullPath = Path.Combine(PackagesDir, package.FolderName);
-                Log.LogMessage(MessageImportance.Low, "NugetPackageRestore :: {0} :: FullPath='{1}'", package.FolderName, packageFullPath);
+                Log.LogMessage(MessageImportance.Normal, "NugetPackageRestore :: {0} :: FullPath='{1}'", package.FolderName, packageFullPath);
                 
                 if (!Directory.Exists(packageFullPath))
                 {
-                    Log.LogMessage(MessageImportance.Low, "NugetPackageRestore :: Package not found!! :: {0}", package.FolderName);
+                    Log.LogMessage(MessageImportance.Normal, "NugetPackageRestore :: Package not found!! :: {0}", package.FolderName);
                     continue;
                 }
 

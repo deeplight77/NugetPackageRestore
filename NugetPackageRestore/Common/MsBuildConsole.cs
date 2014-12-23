@@ -6,6 +6,7 @@ using NuGet.Common;
 using NuGet;
 using Microsoft.Build.Utilities;
 using System.Security;
+using Microsoft.Build.Framework;
 
 namespace NugetPackageRestore
 {
@@ -25,12 +26,12 @@ namespace NugetPackageRestore
 
         public void Write(object value)
         {
-            _logger.LogMessage(value.ToString());   
+            _logger.LogMessage(MessageImportance.Normal, value.ToString());   
         }
 
         public void Write(string value)
         {
-            _logger.LogMessage(value); 
+            _logger.LogMessage(MessageImportance.Normal, value); 
         }
 
         public void Write(string format, params object[] args)
@@ -39,25 +40,25 @@ namespace NugetPackageRestore
             {
                 // Don't try to format strings that do not have arguments. We end up throwing if the original string was not meant to be a format token 
                 // and contained braces (for instance html)
-                _logger.LogMessage(format); 
+                _logger.LogMessage(MessageImportance.Normal, format); 
             }
             else
             {
-                _logger.LogMessage(_logger.FormatString(format, args)); 
+                _logger.LogMessage(MessageImportance.Normal, _logger.FormatString(format, args)); 
             }
         }
 
         public void WriteLine()
         {
-            _logger.LogMessage("");
+            _logger.LogMessage(MessageImportance.Normal, "");
         }
         public void WriteLine(object value)
         {
-            _logger.LogMessage(value.ToString());
+            _logger.LogMessage(MessageImportance.Normal, value.ToString());
         }
         public void WriteLine(string value)
         {
-            _logger.LogMessage(value); 
+            _logger.LogMessage(MessageImportance.Normal, value); 
         }
         public void WriteLine(string format, params object[] args)
         {
@@ -65,11 +66,11 @@ namespace NugetPackageRestore
             {
                 // Don't try to format strings that do not have arguments. We end up throwing if the original string was not meant to be a format token 
                 // and contained braces (for instance html)
-                _logger.LogMessage(format);
+                _logger.LogMessage(MessageImportance.Normal, format);
             }
             else
             {
-                _logger.LogMessage(_logger.FormatString(format, args));
+                _logger.LogMessage(MessageImportance.Normal, _logger.FormatString(format, args));
             }
         }
         public void WriteLine(ConsoleColor color, string value, params object[] args)
@@ -78,21 +79,21 @@ namespace NugetPackageRestore
             {
                 // Don't try to format strings that do not have arguments. We end up throwing if the original string was not meant to be a format token 
                 // and contained braces (for instance html)
-                _logger.LogMessage(value);
+                _logger.LogMessage(MessageImportance.Normal, value);
             }
             else
             {
-                _logger.LogMessage(_logger.FormatString(value, args));
+                _logger.LogMessage(MessageImportance.Normal, _logger.FormatString(value, args));
             }
         }
 
         public void WriteError(object value)
         {
-            _logger.LogMessage(value.ToString()); 
+            _logger.LogMessage(MessageImportance.Normal, value.ToString()); 
         }
         public void WriteError(string value)
         {
-            _logger.LogMessage(value); 
+            _logger.LogMessage(MessageImportance.Normal, value); 
         }
         public void WriteError(string format, params object[] args)
         {
@@ -100,17 +101,17 @@ namespace NugetPackageRestore
             {
                 // Don't try to format strings that do not have arguments. We end up throwing if the original string was not meant to be a format token 
                 // and contained braces (for instance html)
-                _logger.LogMessage(format);
+                _logger.LogMessage(MessageImportance.Normal, format);
             }
             else
             {
-                _logger.LogMessage(_logger.FormatString(format, args));
+                _logger.LogMessage(MessageImportance.Normal, _logger.FormatString(format, args));
             }
         }
 
         public void WriteWarning(string value)
         {
-            _logger.LogMessage(value); 
+            _logger.LogMessage(MessageImportance.Normal, value); 
         }
 
         public void WriteWarning(bool prependWarningText, string value)
@@ -119,7 +120,7 @@ namespace NugetPackageRestore
                                  ? String.Format("Warning: {0}", value)
                                  : value;
 
-            _logger.LogMessage(message); 
+            _logger.LogMessage(MessageImportance.Normal, message); 
         }
 
         public void WriteWarning(string value, params object[] args)
@@ -128,11 +129,11 @@ namespace NugetPackageRestore
             {
                 // Don't try to format strings that do not have arguments. We end up throwing if the original string was not meant to be a format token 
                 // and contained braces (for instance html)
-                _logger.LogMessage(value);
+                _logger.LogMessage(MessageImportance.Normal, value);
             }
             else
             {
-                _logger.LogMessage(_logger.FormatString(value, args));
+                _logger.LogMessage(MessageImportance.Normal, _logger.FormatString(value, args));
             }
         }
 
@@ -146,11 +147,11 @@ namespace NugetPackageRestore
             {
                 // Don't try to format strings that do not have arguments. We end up throwing if the original string was not meant to be a format token 
                 // and contained braces (for instance html)
-                _logger.LogMessage(message);
+                _logger.LogMessage(MessageImportance.Normal, message);
             }
             else
             {
-                _logger.LogMessage(_logger.FormatString(message, args));
+                _logger.LogMessage(MessageImportance.Normal, _logger.FormatString(message, args));
             }
         }
 
@@ -170,11 +171,11 @@ namespace NugetPackageRestore
 
         public void PrintJustified(int startIndex, string text) 
         {
-            _logger.LogMessage(text); 
+            _logger.LogMessage(MessageImportance.Normal, text); 
         }
         public void PrintJustified(int startIndex, string text, int maxWidth) 
         {
-            _logger.LogMessage(text); 
+            _logger.LogMessage(MessageImportance.Normal, text); 
         }
 
         public void Log(MessageLevel level, string message, params object[] args)

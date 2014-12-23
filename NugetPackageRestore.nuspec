@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>NugetPackageRestore</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>Alberto Rechy</authors>
     <owners>Alberto Rechy</owners>
     <projectUrl>https://github.com/deeplight77/NugetPackageRestore</projectUrl>
@@ -10,6 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>MSBuild task to install Nuget packages from local packages folder downloaded by Nuget Package Restore</description>
     <releaseNotes>
+	*1.0.3
+		-Fix: Removed installing dependencies of packages, this caused the main package not to be installed.
 	*1.0.2
 	    -Fix: Error thrown when attempting to overwrite an existing .xst file
 	*1.0.1

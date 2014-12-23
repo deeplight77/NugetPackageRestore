@@ -38,7 +38,7 @@ namespace NugetPackageRestore
                 }
             };
 
-            _projectManager.AddPackageReference(packageId, new SemanticVersion(version), false, false);
+            _projectManager.AddPackageReference(packageId, new SemanticVersion(version), true, false);
             _projectSystem.Save();
         }
     }
