@@ -28,7 +28,7 @@ None of this solutions worked for me, I needed to be able to take advantage of A
 ##Download
 To install NugetPackageRestore, run the following command in the Package Manager Console:
     
-	PM> Install-Package MSBuild.NugetContentRestore
+	PM> Install-Package NugetPackageRestore
 	
 NuGet Package available at https://www.nuget.org/packages/NugetPackageRestore/
 
