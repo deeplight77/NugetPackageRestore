@@ -48,6 +48,14 @@ ConfigFileFullPath - Full path to packages config file, set to $(ProjectDir)pack
 
 ProjectFileFullPath - Full path to project file, set to $(ProjectDir)*.csproj by default
 
+##Debuggin the Task
+In order to debug a task, a few easy things are required:
+- First, right click on the Task Project and select **Properties**, on the window that opens select the **Debug** option.
+- Once there, on the Start Action section select **Start external program** and enter the path for the appropriate MSBuild.exe, in my particular case I use windows 8 and my testing project uses .NET 4, so i used ***"C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"***. 
+- Next, under Start Options, enter the name of your **.csproj file** in the **Command line arguments** textbox (***ie. "UnitTest.csproj"***) and the **full path to your .csproj file** in the **working directory** textbox (***ie. "C:\Users\deeplight77\Devel\Visual Studio Projects\NugetPackageRestore\UnitTest"***). 
+- Then, **uncomment line 60** of **NugetPackageRestoreTask.cs** to launch the debugger and set a breakpoint at any point after this.
+- Finally, all you have to do is **rebuild** the test project and presto! The Just-In-Time debugger will pop up asking you to select a debugger, select your test solution (in this case NugetPackageRestore) and you're ready to go.
+
 ##To DO
 I am currently working on a way to automatically ignore all installed files from source control, beginning by adding them to .gitignore
 
